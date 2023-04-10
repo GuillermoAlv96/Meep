@@ -32,6 +32,16 @@
 		4DE7481929E4393A006C5308 /* CompanyZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7481829E4393A006C5308 /* CompanyZone.swift */; };
 		4DE7481B29E43CA2006C5308 /* HomeRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7481A29E43CA2006C5308 /* HomeRepositoryTest.swift */; };
 		4DE7481D29E44270006C5308 /* LocationDTOMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7481C29E44270006C5308 /* LocationDTOMock.swift */; };
+		4DE7482129E48057006C5308 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482029E48057006C5308 /* HomeViewModel.swift */; };
+		4DE7482529E480B4006C5308 /* HomeRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482429E480B4006C5308 /* HomeRouterProtocol.swift */; };
+		4DE7482729E480BE006C5308 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482629E480BE006C5308 /* HomeRouter.swift */; };
+		4DE7482929E4812C006C5308 /* HomeOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482829E4812C006C5308 /* HomeOutput.swift */; };
+		4DE7482B29E48135006C5308 /* HomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482A29E48135006C5308 /* HomeInput.swift */; };
+		4DE7482D29E48201006C5308 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482C29E48201006C5308 /* HomeViewModelTest.swift */; };
+		4DE7483029E48355006C5308 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7482F29E48355006C5308 /* UIViewControllerExtensions.swift */; };
+		4DE7483329E4839A006C5308 /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483229E4839A006C5308 /* Atoms.swift */; };
+		4DE7483529E483A6006C5308 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483429E483A6006C5308 /* Loaders.swift */; };
+		4DE7483729E485A7006C5308 /* LocationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483629E485A7006C5308 /* LocationMock.swift */; };
 		B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +92,16 @@
 		4DE7481829E4393A006C5308 /* CompanyZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyZone.swift; sourceTree = "<group>"; };
 		4DE7481A29E43CA2006C5308 /* HomeRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryTest.swift; sourceTree = "<group>"; };
 		4DE7481C29E44270006C5308 /* LocationDTOMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTOMock.swift; sourceTree = "<group>"; };
+		4DE7482029E48057006C5308 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4DE7482429E480B4006C5308 /* HomeRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterProtocol.swift; sourceTree = "<group>"; };
+		4DE7482629E480BE006C5308 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		4DE7482829E4812C006C5308 /* HomeOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOutput.swift; sourceTree = "<group>"; };
+		4DE7482A29E48135006C5308 /* HomeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInput.swift; sourceTree = "<group>"; };
+		4DE7482C29E48201006C5308 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		4DE7482F29E48355006C5308 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		4DE7483229E4839A006C5308 /* Atoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atoms.swift; sourceTree = "<group>"; };
+		4DE7483429E483A6006C5308 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
+		4DE7483629E485A7006C5308 /* LocationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMock.swift; sourceTree = "<group>"; };
 		982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.release.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.release.xcconfig"; sourceTree = "<group>"; };
 		D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.debug.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +172,7 @@
 			children = (
 				4DE7481E29E44273006C5308 /* Mocks */,
 				4DE747D129E42199006C5308 /* MeepTests.swift */,
+				4DE7482C29E48201006C5308 /* HomeViewModelTest.swift */,
 				4DE7481A29E43CA2006C5308 /* HomeRepositoryTest.swift */,
 			);
 			path = MeepTests;
@@ -172,6 +193,7 @@
 				4DE747C329E42198006C5308 /* Assets.xcassets */,
 				4DE747C529E42198006C5308 /* LaunchScreen.storyboard */,
 				4DE747C829E42198006C5308 /* Info.plist */,
+				4DE7483129E48387006C5308 /* Atoms */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,6 +213,7 @@
 		4DE747EE29E43235006C5308 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7482E29E48345006C5308 /* Extensions */,
 				4DE7480429E436BD006C5308 /* Enums */,
 				4DE747F129E4324B006C5308 /* Protocols */,
 			);
@@ -216,6 +239,7 @@
 		4DE747F329E4340E006C5308 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7481F29E48049006C5308 /* ViewModel */,
 				4DE747F529E4342F006C5308 /* ViewController */,
 				4DE747F429E43428006C5308 /* Coordinator */,
 			);
@@ -225,6 +249,7 @@
 		4DE747F429E43428006C5308 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7482329E480A3006C5308 /* Router */,
 				4DE747F629E43442006C5308 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -234,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE747BE29E42194006C5308 /* HomeViewController.swift */,
+				4DE7482829E4812C006C5308 /* HomeOutput.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -322,8 +348,44 @@
 			isa = PBXGroup;
 			children = (
 				4DE7481C29E44270006C5308 /* LocationDTOMock.swift */,
+				4DE7483629E485A7006C5308 /* LocationMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		4DE7481F29E48049006C5308 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7482029E48057006C5308 /* HomeViewModel.swift */,
+				4DE7482A29E48135006C5308 /* HomeInput.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4DE7482329E480A3006C5308 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7482429E480B4006C5308 /* HomeRouterProtocol.swift */,
+				4DE7482629E480BE006C5308 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4DE7482E29E48345006C5308 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7482F29E48355006C5308 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DE7483129E48387006C5308 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7483229E4839A006C5308 /* Atoms.swift */,
+				4DE7483429E483A6006C5308 /* Loaders.swift */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 		5DB6185E47AB917BD7CFA239 /* Pods */ = {
@@ -517,11 +579,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE7483529E483A6006C5308 /* Loaders.swift in Sources */,
+				4DE7482129E48057006C5308 /* HomeViewModel.swift in Sources */,
 				4DE7480929E43804006C5308 /* RepsotoryProvider.swift in Sources */,
 				4DE7480F29E4384D006C5308 /* HomeRepository.swift in Sources */,
+				4DE7482529E480B4006C5308 /* HomeRouterProtocol.swift in Sources */,
 				4DE7481529E438B6006C5308 /* LocationModel.swift in Sources */,
 				4DE7481929E4393A006C5308 /* CompanyZone.swift in Sources */,
 				4DE7481129E43865006C5308 /* HomeRepositoryProtocol.swift in Sources */,
+				4DE7482B29E48135006C5308 /* HomeInput.swift in Sources */,
 				4DE7480629E436CE006C5308 /* RequestMethods.swift in Sources */,
 				4DE747FA29E435CC006C5308 /* APIClient.swift in Sources */,
 				4DE747BF29E42194006C5308 /* HomeViewController.swift in Sources */,
@@ -530,11 +596,15 @@
 				4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */,
 				4DE7480329E43680006C5308 /* EndPointModel.swift in Sources */,
 				4DE747F029E43248006C5308 /* Coordinator.swift in Sources */,
+				4DE7483029E48355006C5308 /* UIViewControllerExtensions.swift in Sources */,
 				4DE747FD29E43609006C5308 /* RequestErrors.swift in Sources */,
+				4DE7482729E480BE006C5308 /* HomeRouter.swift in Sources */,
 				4DE747BB29E42194006C5308 /* AppDelegate.swift in Sources */,
 				4DE7481329E438AC006C5308 /* LocationDTO.swift in Sources */,
 				4DE747BD29E42194006C5308 /* SceneDelegate.swift in Sources */,
 				4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */,
+				4DE7482929E4812C006C5308 /* HomeOutput.swift in Sources */,
+				4DE7483329E4839A006C5308 /* Atoms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,9 +612,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE7483729E485A7006C5308 /* LocationMock.swift in Sources */,
 				4DE7481B29E43CA2006C5308 /* HomeRepositoryTest.swift in Sources */,
 				4DE7481D29E44270006C5308 /* LocationDTOMock.swift in Sources */,
 				4DE747D229E42199006C5308 /* MeepTests.swift in Sources */,
+				4DE7482D29E48201006C5308 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

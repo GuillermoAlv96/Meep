@@ -31,8 +31,8 @@ class HomeRepositoryTest: XCTestCase {
     }
     
     func test_start_withData_getLocations_locationsNotNillAndCountTwo() {
-        let sut = makeSUT(scenario: .data)
         
+        let sut = makeSUT(scenario: .data)
         let expectation = expectation(description: "Retrieve locations")
         
         Task {
