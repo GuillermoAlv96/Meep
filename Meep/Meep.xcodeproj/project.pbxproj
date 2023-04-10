@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		4DE747BB29E42194006C5308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747BA29E42194006C5308 /* AppDelegate.swift */; };
 		4DE747BD29E42194006C5308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747BC29E42194006C5308 /* SceneDelegate.swift */; };
-		4DE747BF29E42194006C5308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747BE29E42194006C5308 /* ViewController.swift */; };
-		4DE747C229E42194006C5308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE747C029E42194006C5308 /* Main.storyboard */; };
+		4DE747BF29E42194006C5308 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747BE29E42194006C5308 /* HomeViewController.swift */; };
 		4DE747C429E42198006C5308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE747C329E42198006C5308 /* Assets.xcassets */; };
 		4DE747C729E42198006C5308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE747C529E42198006C5308 /* LaunchScreen.storyboard */; };
 		4DE747D229E42199006C5308 /* MeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747D129E42199006C5308 /* MeepTests.swift */; };
 		4DE747DC29E42199006C5308 /* MeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747DB29E42199006C5308 /* MeepUITests.swift */; };
 		4DE747DE29E42199006C5308 /* MeepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747DD29E42199006C5308 /* MeepUITestsLaunchTests.swift */; };
+		4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747EC29E431FE006C5308 /* MainCoordinator.swift */; };
+		4DE747F029E43248006C5308 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747EF29E43248006C5308 /* Coordinator.swift */; };
+		4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747F629E43442006C5308 /* HomeCoordinator.swift */; };
 		B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +42,7 @@
 		4DE747B729E42194006C5308 /* Meep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE747BA29E42194006C5308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DE747BC29E42194006C5308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DE747BE29E42194006C5308 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DE747C129E42194006C5308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DE747BE29E42194006C5308 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DE747C329E42198006C5308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DE747C629E42198006C5308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DE747C829E42198006C5308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		4DE747D729E42199006C5308 /* MeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE747DB29E42199006C5308 /* MeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepUITests.swift; sourceTree = "<group>"; };
 		4DE747DD29E42199006C5308 /* MeepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DE747EC29E431FE006C5308 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4DE747EF29E43248006C5308 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4DE747F629E43442006C5308 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.release.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.release.xcconfig"; sourceTree = "<group>"; };
 		D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.debug.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,13 +110,11 @@
 		4DE747B929E42194006C5308 /* Meep */ = {
 			isa = PBXGroup;
 			children = (
+				4DE747EA29E4313A006C5308 /* Resources */,
+				4DE747EB29E431E5006C5308 /* Src */,
 				4DE747BA29E42194006C5308 /* AppDelegate.swift */,
 				4DE747BC29E42194006C5308 /* SceneDelegate.swift */,
-				4DE747BE29E42194006C5308 /* ViewController.swift */,
-				4DE747C029E42194006C5308 /* Main.storyboard */,
-				4DE747C329E42198006C5308 /* Assets.xcassets */,
-				4DE747C529E42198006C5308 /* LaunchScreen.storyboard */,
-				4DE747C829E42198006C5308 /* Info.plist */,
+				4DE747EC29E431FE006C5308 /* MainCoordinator.swift */,
 			);
 			path = Meep;
 			sourceTree = "<group>";
@@ -134,13 +136,80 @@
 			path = MeepUITests;
 			sourceTree = "<group>";
 		};
+		4DE747EA29E4313A006C5308 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747C329E42198006C5308 /* Assets.xcassets */,
+				4DE747C529E42198006C5308 /* LaunchScreen.storyboard */,
+				4DE747C829E42198006C5308 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4DE747EB29E431E5006C5308 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F229E432A8006C5308 /* Modules */,
+				4DE747EE29E43235006C5308 /* Utils */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		4DE747EE29E43235006C5308 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F129E4324B006C5308 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4DE747F129E4324B006C5308 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747EF29E43248006C5308 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4DE747F229E432A8006C5308 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F329E4340E006C5308 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4DE747F329E4340E006C5308 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F529E4342F006C5308 /* ViewController */,
+				4DE747F429E43428006C5308 /* Coordinator */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4DE747F429E43428006C5308 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F629E43442006C5308 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4DE747F529E4342F006C5308 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747BE29E42194006C5308 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		5DB6185E47AB917BD7CFA239 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */,
 				B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -260,7 +329,6 @@
 			files = (
 				4DE747C729E42198006C5308 /* LaunchScreen.storyboard in Resources */,
 				4DE747C429E42198006C5308 /* Assets.xcassets in Resources */,
-				4DE747C229E42194006C5308 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE747BF29E42194006C5308 /* ViewController.swift in Sources */,
+				4DE747BF29E42194006C5308 /* HomeViewController.swift in Sources */,
+				4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */,
+				4DE747F029E43248006C5308 /* Coordinator.swift in Sources */,
 				4DE747BB29E42194006C5308 /* AppDelegate.swift in Sources */,
 				4DE747BD29E42194006C5308 /* SceneDelegate.swift in Sources */,
+				4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,14 +437,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4DE747C029E42194006C5308 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DE747C129E42194006C5308 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4DE747C529E42198006C5308 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -512,9 +575,7 @@
 				INFOPLIST_FILE = Meep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,9 +602,7 @@
 				INFOPLIST_FILE = Meep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
