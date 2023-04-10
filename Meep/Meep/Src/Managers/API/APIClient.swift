@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol APIClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestErrors>
+protocol APIClientProtocol {
+    func sendRequest<T: Decodable>(endpoint: EndpointModel, responseModel: T.Type) async -> Result<T, RequestErrors>
 }
 
-extension APIClient {
+class APIClient: APIClientProtocol {
     
     func sendRequest<T: Decodable>(
-        endpoint: Endpoint,
+        endpoint: EndpointModel,
         responseModel: T.Type
     ) async -> Result<T, RequestErrors> {
         

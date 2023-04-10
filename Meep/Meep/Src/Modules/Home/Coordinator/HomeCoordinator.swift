@@ -11,13 +11,15 @@ final class HomeCoordinator: Coordinator {
     var presentedViewController: UIViewController?
     var childCoordinators = [Coordinator]()
     
-    let navigationController: UINavigationController
+    private let navigationController: UINavigationController
+    private let homeRepository: HomeRepositoryProtocol
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, homeRepository: HomeRepositoryProtocol) {
         self.navigationController = navigationController
+        self.homeRepository = homeRepository
     }
     
-    @MainActor func start() {
+    func start() {
         let homeViewController = HomeViewController()
         
         navigationController.viewControllers = [homeViewController]

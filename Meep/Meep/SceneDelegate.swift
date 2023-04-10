@@ -12,11 +12,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private var coordinator: Coordinator?
     private let navigationController = UINavigationController()
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        coordinator = MainCoordinator(navigationController: navigationController)
+        let apiClient = APIClient()
+        let repositoryProvider = RepositoryProvider(apiClient: apiClient)
+        
+        coordinator = MainCoordinator(navigationController: navigationController, repositoryProvider: repositoryProvider)
         coordinator?.start()
         
         window = UIWindow(windowScene: windowScene)

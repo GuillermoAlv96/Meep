@@ -12,13 +12,17 @@ class MainCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
     private let navigationController: UINavigationController
+    private let repositoryProvider: RepositoryProviderProtocol
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, repositoryProvider: RepositoryProviderProtocol) {
         self.navigationController = navigationController
+        self.repositoryProvider = repositoryProvider
     }
     
     @MainActor func start() {
-        let coordinator = HomeCoordinator(navigationController: navigationController)
+        let coordinator = HomeCoordinator(
+            navigationController: navigationController,
+            homeRepository: repositoryProvider.homeRepository)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

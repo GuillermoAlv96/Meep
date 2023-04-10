@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Endpoint {
+struct EndpointModel {
     let baseURL: String
     var path: String? = nil
     var method: RequestMethods = .get
@@ -15,10 +15,10 @@ struct Endpoint {
     let body: [String: String]? = nil
 }
 
-extension Endpoint {
+extension EndpointModel {
     
-    static var mock: Endpoint {
-        Endpoint(
+    static var mock: EndpointModel {
+        EndpointModel(
             baseURL: "https://apidev.meep.me/tripplan/api/v1/routers/lisboa/resources?lowerLeftLatLon=38.711046,-9.160096&upperRightLatLon=38.739429,-9.137115",
             method: .get,
             header: ["User-Agent": "Meep/iOS/1.0.0", "accept": "application/json"]
