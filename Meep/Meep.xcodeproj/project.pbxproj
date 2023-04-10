@@ -18,6 +18,10 @@
 		4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747EC29E431FE006C5308 /* MainCoordinator.swift */; };
 		4DE747F029E43248006C5308 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747EF29E43248006C5308 /* Coordinator.swift */; };
 		4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747F629E43442006C5308 /* HomeCoordinator.swift */; };
+		4DE747FA29E435CC006C5308 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747F929E435CC006C5308 /* APIClient.swift */; };
+		4DE747FD29E43609006C5308 /* RequestErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747FC29E43609006C5308 /* RequestErrors.swift */; };
+		4DE7480329E43680006C5308 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7480229E43680006C5308 /* EndPoint.swift */; };
+		4DE7480629E436CE006C5308 /* RequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7480529E436CE006C5308 /* RequestMethods.swift */; };
 		B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		4DE747EC29E431FE006C5308 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		4DE747EF29E43248006C5308 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4DE747F629E43442006C5308 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		4DE747F929E435CC006C5308 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		4DE747FC29E43609006C5308 /* RequestErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestErrors.swift; sourceTree = "<group>"; };
+		4DE7480229E43680006C5308 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		4DE7480529E436CE006C5308 /* RequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethods.swift; sourceTree = "<group>"; };
 		982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.release.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.release.xcconfig"; sourceTree = "<group>"; };
 		D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.debug.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +157,8 @@
 		4DE747EB29E431E5006C5308 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				4DE747FE29E43647006C5308 /* Models */,
+				4DE747F829E435B9006C5308 /* Managers */,
 				4DE747F229E432A8006C5308 /* Modules */,
 				4DE747EE29E43235006C5308 /* Utils */,
 			);
@@ -158,6 +168,7 @@
 		4DE747EE29E43235006C5308 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7480429E436BD006C5308 /* Enums */,
 				4DE747F129E4324B006C5308 /* Protocols */,
 			);
 			path = Utils;
@@ -202,6 +213,55 @@
 				4DE747BE29E42194006C5308 /* HomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4DE747F829E435B9006C5308 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747FB29E435EA006C5308 /* API */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4DE747FB29E435EA006C5308 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747F929E435CC006C5308 /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4DE747FE29E43647006C5308 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7480029E4365C006C5308 /* APP */,
+				4DE7480129E43662006C5308 /* DTO */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4DE7480029E4365C006C5308 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7480229E43680006C5308 /* EndPoint.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		4DE7480129E43662006C5308 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		4DE7480429E436BD006C5308 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4DE747FC29E43609006C5308 /* RequestErrors.swift */,
+				4DE7480529E436CE006C5308 /* RequestMethods.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		5DB6185E47AB917BD7CFA239 /* Pods */ = {
@@ -395,9 +455,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE7480629E436CE006C5308 /* RequestMethods.swift in Sources */,
+				4DE747FA29E435CC006C5308 /* APIClient.swift in Sources */,
 				4DE747BF29E42194006C5308 /* HomeViewController.swift in Sources */,
 				4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */,
+				4DE7480329E43680006C5308 /* EndPoint.swift in Sources */,
 				4DE747F029E43248006C5308 /* Coordinator.swift in Sources */,
+				4DE747FD29E43609006C5308 /* RequestErrors.swift in Sources */,
 				4DE747BB29E42194006C5308 /* AppDelegate.swift in Sources */,
 				4DE747BD29E42194006C5308 /* SceneDelegate.swift in Sources */,
 				4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */,
