@@ -16,6 +16,7 @@
 		4DE747D229E42199006C5308 /* MeepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747D129E42199006C5308 /* MeepTests.swift */; };
 		4DE747DC29E42199006C5308 /* MeepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747DB29E42199006C5308 /* MeepUITests.swift */; };
 		4DE747DE29E42199006C5308 /* MeepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE747DD29E42199006C5308 /* MeepUITestsLaunchTests.swift */; };
+		B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		4DE747D729E42199006C5308 /* MeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE747DB29E42199006C5308 /* MeepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepUITests.swift; sourceTree = "<group>"; };
 		4DE747DD29E42199006C5308 /* MeepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.release.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.release.xcconfig"; sourceTree = "<group>"; };
+		D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.debug.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				4DE747D029E42199006C5308 /* MeepTests */,
 				4DE747DA29E42199006C5308 /* MeepUITests */,
 				4DE747B829E42194006C5308 /* Products */,
+				5DB6185E47AB917BD7CFA239 /* Pods */,
+				6BBACF14AFB2133C5A8DE101 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +134,24 @@
 			path = MeepUITests;
 			sourceTree = "<group>";
 		};
+		5DB6185E47AB917BD7CFA239 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */,
+				B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6BBACF14AFB2133C5A8DE101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DE747E129E42199006C5308 /* Build configuration list for PBXNativeTarget "Meep" */;
 			buildPhases = (
+				32A8A37D7A11615D446ACA70 /* [CP] Check Pods Manifest.lock */,
 				4DE747B329E42194006C5308 /* Sources */,
 				4DE747B429E42194006C5308 /* Frameworks */,
 				4DE747B529E42194006C5308 /* Resources */,
+				A3EF4B4EDEDEC83ABDB7323D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +279,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32A8A37D7A11615D446ACA70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3EF4B4EDEDEC83ABDB7323D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meep/Pods-Meep-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meep/Pods-Meep-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meep/Pods-Meep-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DE747B329E42194006C5308 /* Sources */ = {
@@ -432,6 +501,7 @@
 		};
 		4DE747E229E42199006C5308 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +530,7 @@
 		};
 		4DE747E329E42199006C5308 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
