@@ -8,6 +8,6 @@
 import Foundation
 
 enum CompanyZone {
-    case one, two, three
+    case bus, bike, scooter
     case unknown
 }

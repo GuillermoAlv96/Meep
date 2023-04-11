@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
     
     private func configureConstraints() {
         
-        setup()
+        setupViews()
         
         view.addSubview(mapView)
         
@@ -41,7 +41,7 @@ final class HomeViewController: UIViewController {
         ])
     }
     
-    private func setup() {
+    private func setupViews() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
     }
 }

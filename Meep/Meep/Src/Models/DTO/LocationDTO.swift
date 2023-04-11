@@ -63,11 +63,11 @@ extension LocationDTO {
         guard let companyZoneId = companyZoneId else { return .unknown }
         switch companyZoneId {
         case 378:
-            return .one
+            return .bus
         case 473:
-            return .two
+            return .bike
         case 412:
-            return .three
+            return .scooter
         default:
             return .unknown
         }

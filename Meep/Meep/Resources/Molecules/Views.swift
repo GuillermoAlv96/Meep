@@ -11,4 +11,12 @@ extension Molecules.Views {
     static var mapView: GoogleMapView {
         GoogleMapView()
     }
+    
+    static var markerInfoWindowView: MarkerInfoWindowView {
+        MarkerInfoWindowView()
+    }
+    
+    static var markerView: MarkerView {
+        MarkerView()
+    }
 }

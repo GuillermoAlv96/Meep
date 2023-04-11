@@ -31,7 +31,7 @@ final class GoogleMapView: UIView {
     
     func configureConstraints() {
         
-        setup()
+        setupViews()
         
         addSubview(mapView)
         
@@ -39,11 +39,11 @@ final class GoogleMapView: UIView {
             mapView.topAnchor.constraint(equalTo: topAnchor),
             mapView.bottomAnchor.constraint(equalTo: bottomAnchor),
             mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            mapView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
     
-    private func setup() {
+    private func setupViews() {
         loadMapStyle()
         mapView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -59,7 +59,7 @@ final class GoogleMapView: UIView {
     
     private func setCameraPosition(position: PositionModel) {
         let lisbon = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
-        let cameraPostion = GMSCameraPosition(target: lisbon, zoom: 16)
+        let cameraPostion = GMSCameraPosition(target: lisbon, zoom: Float(Spacings.spacingM))
         mapView.animate(to: cameraPostion)
     }
   
@@ -71,9 +71,15 @@ final class GoogleMapView: UIView {
             
             if mapView.projection.contains(position) {
                 let marker = GMSMarker(position: position)
-                marker.iconView = model.markerIcon
-                marker.title = model.markerTitle
-                marker.snippet = model.name
+                let markerView = Molecules.Views.markerView
+                
+                markerView.translatesAutoresizingMaskIntoConstraints = false
+                markerView.widthAnchor.constraint(equalToConstant: Spacings.spacingXl).isActive = true
+                markerView.heightAnchor.constraint(equalToConstant: Spacings.spacingXl).isActive = true
+            
+                marker.userData = model
+                marker.iconView = markerView
+                markerView.binding(model: model.markerIcon)
                 marker.map = mapView
             }
         }
@@ -83,5 +89,20 @@ final class GoogleMapView: UIView {
 extension GoogleMapView: GMSMapViewDelegate {
     func mapViewDidFinishTileRendering(_ mapView: GMSMapView) {
         addMarkers()
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        let infoWindow = Molecules.Views.markerInfoWindowView
+        
+        infoWindow.frame = CGRect(x: 0, y: 0, width: Spacings.spacingHh, height: Spacings.spacingH)
+//        infoWindow.translatesAutoresizingMaskIntoConstraints = false
+//        infoWindow.widthAnchor.constraint(equalToConstant: 300).isActive = true
+//        infoWindow.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        guard let model = marker.userData as? MarkerModel else { return UIView() }
+        infoWindow.binding(model: model.markerInfo)
+        
+        return infoWindow
     }
 }

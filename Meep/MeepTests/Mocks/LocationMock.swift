@@ -14,13 +14,13 @@ extension LocationModel {
         LocationModel(
             name: "London",
             pictureFrame: PositionModel(latitude: 11.111, longitude: 12.222),
-            companyZoneID: .one,
+            companyZoneID: .bus,
             latLng: PositionModel(latitude: 11.111, longitude: 12.222)
         ),
         LocationModel(
             name: "Madrid",
             pictureFrame: PositionModel(latitude: 11.111, longitude: 12.222),
-            companyZoneID: .two,
+            companyZoneID: .bike,
             latLng: PositionModel(latitude: 11.111, longitude: 12.222)
         )
     ]

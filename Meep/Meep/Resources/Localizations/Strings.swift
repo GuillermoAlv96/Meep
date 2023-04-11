@@ -14,8 +14,13 @@ enum Strings {
     static let jsonError = "Failed loading json style"
     
     static let markerIcon = "parkingsign.circle.fill"
+    static let chevron = "chevron"
     
     static let busStop = "Bus stop"
     static let bikeStop = "Bike stop"
     static let scooterStop = "Scooter stop"
+    
+    static let bus = "bus"
+    static let bicycle = "bicycle"
+    static let scooter = "scooter"
 }

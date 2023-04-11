@@ -7,41 +7,63 @@
 
 import UIKit
 
-struct MarkerModel {
+struct MarkerModel: Equatable {
     let name: String?
     let position: PositionModel
     let companyZoneId: CompanyZone
     
-    var markerIcon: UIImageView {
-    
-        let imageView = UIImageView(image: UIImage(systemName: Strings.markerIcon))
-        
-        switch companyZoneId {
-        case .one:
-            imageView.tintColor = .red
-            return imageView
-        case .two:
-            imageView.tintColor = .blue
-            return imageView
-        case .three:
-            imageView.tintColor = .green
-            return imageView
-        case .unknown:
-            imageView.tintColor = .gray
-            return imageView
-        }
-    }
-    
     var markerTitle: String {
         switch companyZoneId {
-        case .one:
+        case .bus:
             return Strings.busStop
-        case .two:
+        case .bike:
             return Strings.bikeStop
-        case .three:
+        case .scooter:
             return Strings.scooterStop
         case .unknown:
             return "unkown"
+        }
+    }
+    
+    var markerIcon: MarkerIconModel {
+        switch companyZoneId {
+        case .bus:
+            return MarkerIconModel(color: .yellow, image: UIImage(systemName: Strings.bus))
+        case .bike:
+            return MarkerIconModel(color: .green, image: UIImage(systemName: Strings.bicycle))
+        case .scooter:
+            return MarkerIconModel(color: .blue, image: UIImage(systemName: Strings.scooter))
+        case .unknown:
+            return MarkerIconModel(color: .red, image: UIImage(named: ""))
+        }
+    }
+    
+    var markerInfo: MarkerInfoModel {
+        switch companyZoneId {
+        case .bus:
+            return MarkerInfoModel(
+                title: markerTitle,
+                subtitle: name,
+                backGroundColor: markerIcon.color,
+                image: markerIcon.image)
+        case .bike:
+            return MarkerInfoModel(
+                title: markerTitle,
+                subtitle: name,
+                backGroundColor: markerIcon.color,
+                image: markerIcon.image)
+        case .scooter:
+            return MarkerInfoModel(
+                title: markerTitle,
+                subtitle: name,
+                backGroundColor: markerIcon.color,
+                image: markerIcon.image)
+        case .unknown:
+            return MarkerInfoModel(
+                title: markerTitle,
+                subtitle: name,
+                backGroundColor: markerIcon.color,
+                image: markerIcon.image)
         }
     }
 }
