@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private let input: HomeInput
+    private let mapView = Molecules.Views.mapView
     
     init(input: HomeInput) {
         self.input = input
@@ -27,11 +28,21 @@ final class HomeViewController: UIViewController {
     }
     
     private func configureConstraints() {
+        
         setup()
+        
+        view.addSubview(mapView)
+        
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: view.topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     private func setup() {
-        view.backgroundColor = .red
+        mapView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
@@ -40,12 +51,14 @@ extension HomeViewController: HomeOutput {
         switch state {
         case .loading:
             showLoadingScreen(onView: view)
-        case .loaded(_):
+        case .loaded(let model):
+            mapView.binding(model: model)
             dismissLoadingScreen()
         case .error:
             dismissLoadingScreen()
         }
     }
 }
+
 
 

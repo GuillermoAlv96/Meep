@@ -25,3 +25,12 @@ struct LocationModel {
     var allowDropoff: Bool?
     var bikesAvailable: Int?
 }
+
+extension LocationModel {
+    func mapToMarkers() -> MarkerModel {
+        MarkerModel(
+            name: name,
+            position: latLng,
+            companyZoneId: companyZoneID)
+    }
+}

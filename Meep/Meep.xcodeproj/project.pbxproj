@@ -42,6 +42,15 @@
 		4DE7483329E4839A006C5308 /* Atoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483229E4839A006C5308 /* Atoms.swift */; };
 		4DE7483529E483A6006C5308 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483429E483A6006C5308 /* Loaders.swift */; };
 		4DE7483729E485A7006C5308 /* LocationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483629E485A7006C5308 /* LocationMock.swift */; };
+		4DE7483D29E494E8006C5308 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483C29E494E8006C5308 /* MapViewController.swift */; };
+		4DE7484029E49562006C5308 /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7483F29E49562006C5308 /* Molecules.swift */; };
+		4DE7484229E4956D006C5308 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484129E4956D006C5308 /* Views.swift */; };
+		4DE7484429E49643006C5308 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DE7484329E49643006C5308 /* style.json */; };
+		4DE7484729E53ADE006C5308 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484629E53ADE006C5308 /* MapModel.swift */; };
+		4DE7484929E53AF5006C5308 /* MarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484829E53AF5006C5308 /* MarkerModel.swift */; };
+		4DE7484B29E595FB006C5308 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484A29E595FB006C5308 /* BundleExtensions.swift */; };
+		4DE7484E29E5992D006C5308 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484D29E5992D006C5308 /* Strings.swift */; };
+		4DE7485029E5A39C006C5308 /* MarkerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7484F29E5A39C006C5308 /* MarkerDetailView.swift */; };
 		B5AFD551021DC81BD6AB953F /* Pods_Meep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +111,15 @@
 		4DE7483229E4839A006C5308 /* Atoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atoms.swift; sourceTree = "<group>"; };
 		4DE7483429E483A6006C5308 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
 		4DE7483629E485A7006C5308 /* LocationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMock.swift; sourceTree = "<group>"; };
+		4DE7483C29E494E8006C5308 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4DE7483F29E49562006C5308 /* Molecules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
+		4DE7484129E4956D006C5308 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		4DE7484329E49643006C5308 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		4DE7484629E53ADE006C5308 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		4DE7484829E53AF5006C5308 /* MarkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerModel.swift; sourceTree = "<group>"; };
+		4DE7484A29E595FB006C5308 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
+		4DE7484D29E5992D006C5308 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		4DE7484F29E5A39C006C5308 /* MarkerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailView.swift; sourceTree = "<group>"; };
 		982690CF0E27B33BB5E65C35 /* Pods_Meep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23616C3EEA0837EEE19B6B0 /* Pods-Meep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.release.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.release.xcconfig"; sourceTree = "<group>"; };
 		D843776A788130C7ADAC76C1 /* Pods-Meep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meep.debug.xcconfig"; path = "Target Support Files/Pods-Meep/Pods-Meep.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,10 +208,13 @@
 		4DE747EA29E4313A006C5308 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7484329E49643006C5308 /* style.json */,
 				4DE747C329E42198006C5308 /* Assets.xcassets */,
 				4DE747C529E42198006C5308 /* LaunchScreen.storyboard */,
 				4DE747C829E42198006C5308 /* Info.plist */,
 				4DE7483129E48387006C5308 /* Atoms */,
+				4DE7483E29E49542006C5308 /* Molecules */,
+				4DE7484C29E59908006C5308 /* Localizations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -231,6 +252,7 @@
 		4DE747F229E432A8006C5308 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7483829E494B4006C5308 /* Map */,
 				4DE747F329E4340E006C5308 /* Home */,
 			);
 			path = Modules;
@@ -295,6 +317,8 @@
 				4DE7480229E43680006C5308 /* EndPointModel.swift */,
 				4DE7481429E438B6006C5308 /* LocationModel.swift */,
 				4DE7481629E438EB006C5308 /* PositionModel.swift */,
+				4DE7484629E53ADE006C5308 /* MapModel.swift */,
+				4DE7484829E53AF5006C5308 /* MarkerModel.swift */,
 			);
 			path = APP;
 			sourceTree = "<group>";
@@ -375,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE7482F29E48355006C5308 /* UIViewControllerExtensions.swift */,
+				4DE7484A29E595FB006C5308 /* BundleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +411,32 @@
 				4DE7483429E483A6006C5308 /* Loaders.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		4DE7483829E494B4006C5308 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7483C29E494E8006C5308 /* MapViewController.swift */,
+				4DE7484F29E5A39C006C5308 /* MarkerDetailView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		4DE7483E29E49542006C5308 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7483F29E49562006C5308 /* Molecules.swift */,
+				4DE7484129E4956D006C5308 /* Views.swift */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		4DE7484C29E59908006C5308 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				4DE7484D29E5992D006C5308 /* Strings.swift */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		5DB6185E47AB917BD7CFA239 /* Pods */ = {
@@ -511,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE7484429E49643006C5308 /* style.json in Resources */,
 				4DE747C729E42198006C5308 /* LaunchScreen.storyboard in Resources */,
 				4DE747C429E42198006C5308 /* Assets.xcassets in Resources */,
 			);
@@ -580,20 +632,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE7483529E483A6006C5308 /* Loaders.swift in Sources */,
+				4DE7484E29E5992D006C5308 /* Strings.swift in Sources */,
+				4DE7484B29E595FB006C5308 /* BundleExtensions.swift in Sources */,
 				4DE7482129E48057006C5308 /* HomeViewModel.swift in Sources */,
 				4DE7480929E43804006C5308 /* RepsotoryProvider.swift in Sources */,
+				4DE7484029E49562006C5308 /* Molecules.swift in Sources */,
 				4DE7480F29E4384D006C5308 /* HomeRepository.swift in Sources */,
 				4DE7482529E480B4006C5308 /* HomeRouterProtocol.swift in Sources */,
 				4DE7481529E438B6006C5308 /* LocationModel.swift in Sources */,
 				4DE7481929E4393A006C5308 /* CompanyZone.swift in Sources */,
 				4DE7481129E43865006C5308 /* HomeRepositoryProtocol.swift in Sources */,
 				4DE7482B29E48135006C5308 /* HomeInput.swift in Sources */,
+				4DE7485029E5A39C006C5308 /* MarkerDetailView.swift in Sources */,
 				4DE7480629E436CE006C5308 /* RequestMethods.swift in Sources */,
 				4DE747FA29E435CC006C5308 /* APIClient.swift in Sources */,
 				4DE747BF29E42194006C5308 /* HomeViewController.swift in Sources */,
 				4DE7481729E438EB006C5308 /* PositionModel.swift in Sources */,
+				4DE7484929E53AF5006C5308 /* MarkerModel.swift in Sources */,
 				4DE7480B29E4380E006C5308 /* RespositoryProviderProtocol.swift in Sources */,
 				4DE747ED29E431FE006C5308 /* MainCoordinator.swift in Sources */,
+				4DE7484729E53ADE006C5308 /* MapModel.swift in Sources */,
 				4DE7480329E43680006C5308 /* EndPointModel.swift in Sources */,
 				4DE747F029E43248006C5308 /* Coordinator.swift in Sources */,
 				4DE7483029E48355006C5308 /* UIViewControllerExtensions.swift in Sources */,
@@ -601,10 +659,12 @@
 				4DE7482729E480BE006C5308 /* HomeRouter.swift in Sources */,
 				4DE747BB29E42194006C5308 /* AppDelegate.swift in Sources */,
 				4DE7481329E438AC006C5308 /* LocationDTO.swift in Sources */,
+				4DE7483D29E494E8006C5308 /* MapViewController.swift in Sources */,
 				4DE747BD29E42194006C5308 /* SceneDelegate.swift in Sources */,
 				4DE747F729E43442006C5308 /* HomeCoordinator.swift in Sources */,
 				4DE7482929E4812C006C5308 /* HomeOutput.swift in Sources */,
 				4DE7483329E4839A006C5308 /* Atoms.swift in Sources */,
+				4DE7484229E4956D006C5308 /* Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

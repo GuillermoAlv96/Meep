@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>API Base Url</key>
+	<string>https://apidev.meep.me/tripplan/api/v1/routers/lisboa/resources?lowerLeftLatLon=38.711046,-9.160096&amp;upperRightLatLon=38.739429,-9.137115</string>
+	<key>Google Key</key>
+	<string>AIzaSyCt9JsltFXnURVTAlHBSpGEvZHkjt0iIxI</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -19,5 +23,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>googleKey</key>
+	<string>AIzaSyCt9JsltFXnURVTAlHBSpGEvZHkjt0iIxI</string>
 </dict>
 </plist>

@@ -18,8 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let apiClient = APIClient()
         let repositoryProvider = RepositoryProvider(apiClient: apiClient)
+        let mainCoordinator = MainCoordinator(navigationController: navigationController, repositoryProvider: repositoryProvider)
         
-        coordinator = MainCoordinator(navigationController: navigationController, repositoryProvider: repositoryProvider)
+        coordinator = mainCoordinator
         coordinator?.start()
         
         window = UIWindow(windowScene: windowScene)

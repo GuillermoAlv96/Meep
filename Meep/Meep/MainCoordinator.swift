@@ -9,7 +9,7 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     var presentedViewController: UIViewController?
-    var childCoordinators: [Coordinator] = []
+    var childCoordinators = [Coordinator]()
     
     private let navigationController: UINavigationController
     private let repositoryProvider: RepositoryProviderProtocol

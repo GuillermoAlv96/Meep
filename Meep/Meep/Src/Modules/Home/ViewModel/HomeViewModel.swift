@@ -30,7 +30,9 @@ import Foundation
             
             switch result {
             case .success(let locations):
-                currentState = .loaded(locations)
+                guard let pictureFrame = locations.first?.pictureFrame else { return }
+                let markers = locations.map { $0.mapToMarkers() }
+                currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
             case .failure(_):
                 currentState = .error
             }

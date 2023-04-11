@@ -18,7 +18,7 @@ class APIClient: APIClientProtocol {
         responseModel: T.Type
     ) async -> Result<T, RequestErrors> {
         
-        guard let url = URL(string: endpoint.baseURL) else { return .failure(.invalidURL) }
+        guard let url = URL(string: Bundle.main.apiBaseUrl ?? "") else { return .failure(.invalidURL) }
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue

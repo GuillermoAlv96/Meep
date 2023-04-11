@@ -13,6 +13,6 @@ protocol HomeOutput: AnyObject {
 
 enum HomeStates {
     case loading
-    case loaded([LocationModel])
+    case loaded(MapModel)
     case error
 }
