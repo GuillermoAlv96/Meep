@@ -50,8 +50,9 @@ class MarkerInfoWindowView: UIView {
             txtLabel.trailingAnchor.constraint(equalTo: chevronButton.leadingAnchor, constant: -Spacings.spacingMs),
             
             subtitleLabel.topAnchor.constraint(equalTo: txtLabel.bottomAnchor),
+            subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             subtitleLabel.leadingAnchor.constraint(equalTo: txtLabel.leadingAnchor),
-            subtitleLabel.trailingAnchor.constraint(equalTo: txtLabel.trailingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: chevronButton.leadingAnchor),
             
             chevronButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             chevronButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacings.spacingMs),
