@@ -10,7 +10,6 @@ import UIKit
 extension UIViewController {
     struct Holder {
         static var indicator: UIView?
-        static var alertView: AlertView?
     }
     
     var indicatorView: UIView? {
@@ -38,26 +37,5 @@ extension UIViewController {
     func dismissLoadingScreen() {
         indicatorView?.removeFromSuperview()
         indicatorView = nil
-    }
-    
-    var alertView: AlertView? {
-        get {
-            return Holder.alertView
-        }
-        set(newValue) {
-            Holder.alertView = newValue
-        }
-    }
-    
-    func showAlertScreen(onView: UIView, alertModel: AlertModel) {
-        alertView = AlertView()
-        guard let alertView = alertView else { return }
-        alertView.binding(model: alertModel)
-        onView.addSubview(alertView)
-    }
-    
-    func dismissAlertScreen() {
-        alertView?.removeFromSuperview()
-        alertView = nil
     }
 }

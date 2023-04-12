@@ -19,7 +19,7 @@ final class HomeCoordinator: Coordinator {
         self.homeRepository = homeRepository
     }
     
-    @MainActor func start() {
+    func start() {
         let homeViewModel = HomeViewModel(homeRepository: homeRepository)
         let homeViewController = HomeViewController(input: homeViewModel)
         homeViewModel.output = homeViewController

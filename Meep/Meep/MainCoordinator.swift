@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
         self.repositoryProvider = repositoryProvider
     }
     
-    @MainActor func start() {
+    func start() {
         let coordinator = HomeCoordinator(
             navigationController: navigationController,
             homeRepository: repositoryProvider.homeRepository)

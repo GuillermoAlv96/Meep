@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor class HomeViewModel {
+final class HomeViewModel {
     
     weak var output: HomeOutput?
     weak var router: HomeRouter?
@@ -27,17 +27,18 @@ import Foundation
     private func fetchData() {
         
         output?.receive(state: .loading)
-        Task {
-            let result = await homeRepository.getLocations()
+        homeRepository.getLocations() {[weak self] response in
             
-            switch result {
+            guard let self = self else { return }
+            
+            switch response {
             case .success(let locations):
                 guard let pictureFrame = locations.first?.pictureFrame else { return }
                 let markers = locations.map { $0.mapToMarkers() }
-                currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
+                self.currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
             case .failure(let error):
-                output?.receive(state: .error)
-                router?.showAlert(alertModel: AlertModel(text: error.localizedDescription, action: fetchData))
+                self.output?.receive(state: .error)
+                self.router?.showAlert(alertModel: AlertModel(text: error.localizedDescription, action: self.fetchData))
             }
         }
     }

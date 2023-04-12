@@ -15,15 +15,15 @@ class HomeRepository: HomeRepositoryProtocol {
         self.apiClient = apiClient
     }
     
-    func getLocations() async -> Result<[LocationModel], Error> {
-        let request = await apiClient.sendRequest(endpoint: EndpointModel.mock, responseModel: [LocationDTO].self)
-        
-        switch request {
-        case .success(let locations):
-            let locations = locations.map { $0.mapToModel }
-            return .success(locations)
-        case .failure(let error):
-            return .failure(error)
+    func getLocations(completion: @escaping (Result<[LocationModel], Error>) -> Void) {
+        apiClient.sendRequest(endpoint: EndpointModel.mock, responseModel: [LocationDTO].self) { response in
+            switch response {
+            case .success(let locations):
+                let locations = locations.map { $0.mapToModel }
+                completion(.success(locations))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HomeRepositoryProtocol {
-    func getLocations() async -> Result<[LocationModel], Error>
+    func getLocations(completion: @escaping (Result<[LocationModel], Error>) -> Void)
 }
