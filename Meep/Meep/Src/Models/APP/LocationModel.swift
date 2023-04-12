@@ -27,10 +27,31 @@ struct LocationModel {
 }
 
 extension LocationModel {
-    func mapToMarkers() -> MarkerModel {
+    func mapToMarkers(action: @escaping () -> Void) -> MarkerModel {
         MarkerModel(
             name: name,
             position: latLng,
-            companyZoneId: companyZoneID)
+            companyZoneId: companyZoneID,
+            action: action)
+    }
+    
+    func mapToArray() -> [DetailCellModel] {
+        var sectionSessions = [DetailCellModel]()
+        
+        if let name = name {
+            sectionSessions.append(DetailCellModel(title: Strings.name, content: name))
+        }
+        
+        if let scheduledArrival = scheduledArrival {
+            sectionSessions.append(DetailCellModel(title: Strings.scheduledArrival, content: "\(scheduledArrival)"))
+        }
+        
+        if let taxable = taxable {
+            sectionSessions.append(DetailCellModel(title: Strings.taxable, content: "\(taxable)"))
+        }
+      
+        return sectionSessions
     }
 }
+
+

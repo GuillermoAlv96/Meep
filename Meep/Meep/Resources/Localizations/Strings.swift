@@ -23,7 +23,12 @@ enum Strings {
     static let bus = "bus"
     static let bicycle = "bicycle"
     static let scooter = "scooter"
-    
+    static let tryAgain = "Try again"
     static let error = "Error"
     static let retry = "Retry"
+    
+    static let name = "Name"
+    static let scheduledArrival = "Scheduled Arrival"
+    static let taxable = "Taxable"
+    static let details = "Details"
 }

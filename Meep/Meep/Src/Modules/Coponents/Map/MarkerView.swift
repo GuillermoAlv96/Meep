@@ -48,7 +48,7 @@ class MarkerView: UIView {
     
     func setupViews() {
 
-        imgView.backgroundColor = .black
+        imgView.backgroundColor = .red.withAlphaComponent(0.6)
         imgView.layer.cornerRadius = Spacings.spacingMs
         imgView.contentMode = .scaleAspectFill
         imgView.layer.borderWidth = 2

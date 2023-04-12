@@ -9,4 +9,5 @@ import Foundation
 
 protocol HomeRouter: AnyObject {
     func showAlert(alertModel: AlertModel)
+    func showDetail(location: LocationModel)
 }

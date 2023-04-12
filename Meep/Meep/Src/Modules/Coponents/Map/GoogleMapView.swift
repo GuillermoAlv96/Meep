@@ -14,6 +14,8 @@ final class GoogleMapView: UIView {
     private var markers = [MarkerModel]()
     private var cameraPosition = PositionModel.empty
     
+    private let infoWindow = Molecules.Views.markerInfoWindowView
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         configureConstraints()
@@ -46,6 +48,7 @@ final class GoogleMapView: UIView {
     private func setupViews() {
         loadMapStyle()
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        infoWindow.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func loadMapStyle() {
@@ -62,7 +65,7 @@ final class GoogleMapView: UIView {
         let cameraPostion = GMSCameraPosition(target: lisbon, zoom: Float(Spacings.spacingM))
         mapView.animate(to: cameraPostion)
     }
-  
+    
     private func addMarkers() {
         markers.forEach { model in
             let position = CLLocationCoordinate2D(
@@ -76,7 +79,7 @@ final class GoogleMapView: UIView {
                 markerView.translatesAutoresizingMaskIntoConstraints = false
                 markerView.widthAnchor.constraint(equalToConstant: Spacings.spacingXl).isActive = true
                 markerView.heightAnchor.constraint(equalToConstant: Spacings.spacingXl).isActive = true
-            
+                
                 marker.userData = model
                 marker.iconView = markerView
                 markerView.binding(model: model.markerIcon)
@@ -92,17 +95,26 @@ extension GoogleMapView: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        return UIView()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
-        let infoWindow = Molecules.Views.markerInfoWindowView
+        infoWindow.removeFromSuperview()
+        addSubview(infoWindow)
         
-        infoWindow.frame = CGRect(x: 0, y: 0, width: Spacings.spacingHh, height: Spacings.spacingH)
-//        infoWindow.translatesAutoresizingMaskIntoConstraints = false
-//        infoWindow.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        infoWindow.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        infoWindow.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Spacings.spacingM).isActive = true
+        infoWindow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacings.spacingM).isActive = true
+        infoWindow.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         
-        guard let model = marker.userData as? MarkerModel else { return UIView() }
-        infoWindow.binding(model: model.markerInfo)
-        
-        return infoWindow
+        guard let model = marker.userData as? MarkerModel else { return false }
+        infoWindow.binding(model: model.markerInfo, action: model.action)
+        return false
+    }
+    
+    
+    // take care of the close event
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        infoWindow.removeFromSuperview()
     }
 }

@@ -10,9 +10,10 @@ import UIKit
 class MarkerInfoWindowView: UIView {
     
     private let txtLabel = Atoms.Labels.txtLabel
-    private let subtitleLabel = Atoms.Labels.subtitleLabel
     private let imgView = UIImageView()
     private let chevronButton = UIButton()
+    
+    private var buttonAction = {}
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -23,11 +24,11 @@ class MarkerInfoWindowView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func binding(model: MarkerInfoModel) {
+    func binding(model: MarkerInfoModel, action: @escaping () -> Void) {
         backgroundColor = model.backGroundColor
         txtLabel.text = model.title
-        subtitleLabel.text = model.subtitle
         imgView.image = model.image
+        buttonAction = action
     }
     
     func configureConstraints() {
@@ -35,7 +36,6 @@ class MarkerInfoWindowView: UIView {
         
         addSubview(imgView)
         addSubview(txtLabel)
-        addSubview(subtitleLabel)
         addSubview(chevronButton)
         
         NSLayoutConstraint.activate([
@@ -45,15 +45,10 @@ class MarkerInfoWindowView: UIView {
             imgView.widthAnchor.constraint(equalToConstant: Spacings.spacingH),
             imgView.heightAnchor.constraint(equalToConstant: Spacings.spacingXxl),
             
-            txtLabel.topAnchor.constraint(equalTo: topAnchor, constant: Spacings.spacingM),
-            txtLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor),
+            txtLabel.topAnchor.constraint(equalTo: topAnchor),
+            txtLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             txtLabel.leadingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: Spacings.spacingM),
             txtLabel.trailingAnchor.constraint(equalTo: chevronButton.leadingAnchor, constant: -Spacings.spacingM),
-            
-            subtitleLabel.topAnchor.constraint(equalTo: txtLabel.bottomAnchor),
-            subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Spacings.spacingM),
-            subtitleLabel.leadingAnchor.constraint(equalTo: imgView.trailingAnchor, constant: Spacings.spacingM),
-            subtitleLabel.trailingAnchor.constraint(equalTo: chevronButton.leadingAnchor),
             
             chevronButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             chevronButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Spacings.spacingMs),
@@ -77,14 +72,16 @@ class MarkerInfoWindowView: UIView {
         imgView.translatesAutoresizingMaskIntoConstraints = false
 
         chevronButton.setImage(UIImage(named: Strings.chevron), for: .normal)
+        
+        chevronButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         chevronButton.tintColor = .black
         chevronButton.isUserInteractionEnabled = true
         chevronButton.translatesAutoresizingMaskIntoConstraints = false
         
-        txtLabel.numberOfLines = 2
         txtLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        subtitleLabel.numberOfLines = 0
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false 
+    }
+    
+    @objc func buttonTapped() {
+        buttonAction()
     }
 }

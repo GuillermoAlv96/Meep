@@ -52,4 +52,5 @@ extension UITableView {
         guard let cell = self.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? Cell else { fatalError() }
         return cell
     }
+    
 }

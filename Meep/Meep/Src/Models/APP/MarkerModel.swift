@@ -8,9 +8,11 @@
 import UIKit
 
 struct MarkerModel: Equatable {
+    
     let name: String?
     let position: PositionModel
     let companyZoneId: CompanyZone
+    let action: () -> Void
     
     var markerTitle: String {
         switch companyZoneId {
@@ -42,30 +44,28 @@ struct MarkerModel: Equatable {
         switch companyZoneId {
         case .bus:
             return MarkerInfoModel(
-                title: markerTitle,
-                subtitle: name,
+                title: name,
                 backGroundColor: markerIcon.color,
                 image: markerIcon.image)
         case .bike:
             return MarkerInfoModel(
-                title: markerTitle,
-                subtitle: name,
+                title: name,
                 backGroundColor: markerIcon.color,
                 image: markerIcon.image)
         case .scooter:
             return MarkerInfoModel(
-                title: markerTitle,
-                subtitle: name,
+                title: name,
                 backGroundColor: markerIcon.color,
                 image: markerIcon.image)
         case .unknown:
             return MarkerInfoModel(
-                title: markerTitle,
-                subtitle: name,
+                title: name,
                 backGroundColor: markerIcon.color,
                 image: markerIcon.image)
         }
     }
+    
+    static func == (lhs: MarkerModel, rhs: MarkerModel) -> Bool {
+        lhs.position == rhs.position
+    }
 }
-
-

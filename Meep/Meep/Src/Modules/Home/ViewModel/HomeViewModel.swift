@@ -27,6 +27,7 @@ final class HomeViewModel {
     private func fetchData() {
         
         output?.receive(state: .loading)
+        
         homeRepository.getLocations() { [weak self] response in
             
             guard let self = self else { return }
@@ -36,15 +37,22 @@ final class HomeViewModel {
                 guard let pictureFrame = locations.first?.pictureFrame else {
                     self.output?.receive(state: .error)
                     self.router?.showAlert(alertModel: AlertModel(
-                        text: "Try again",
+                        text: Strings.tryAgain,
                         action: self.fetchData))
                     return
                 }
-                let markers = locations.map { $0.mapToMarkers() }
+                let markers = locations.map { location in
+                    location.mapToMarkers(action: {
+                        self.router?.showDetail(location: location)
+                    })
+                }
+                
                 self.currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
             case .failure(let error):
                 self.output?.receive(state: .error)
-                self.router?.showAlert(alertModel: AlertModel(text: error.localizedDescription, action: self.fetchData))
+                self.router?.showAlert(alertModel: AlertModel(
+                    text: error.localizedDescription,
+                    action: self.fetchData))
             }
         }
     }

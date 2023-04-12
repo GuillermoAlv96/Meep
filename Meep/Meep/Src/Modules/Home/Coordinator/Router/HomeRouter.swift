@@ -22,4 +22,13 @@ extension HomeCoordinator: HomeRouter {
     private func dismissAlert() {
         presentedViewController?.dismiss(animated: true)
     }
+    
+    func showDetail(location: LocationModel) {
+        let detailViewModel = DetailViewModel(location: location)
+        let detailViewController = DetailViewController(input: detailViewModel)
+        detailViewModel.output = detailViewController
+        
+        presentedViewController?.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
 }

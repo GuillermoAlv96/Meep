@@ -9,7 +9,6 @@ import UIKit
 
 struct MarkerInfoModel {
     let title: String?
-    let subtitle: String?
     let backGroundColor: UIColor
     let image: UIImage?
 }
