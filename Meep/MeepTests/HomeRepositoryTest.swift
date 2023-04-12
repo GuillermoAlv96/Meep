@@ -16,10 +16,8 @@ class HomeRepositoryTest: XCTestCase {
         
         let expectation = expectation(description: "Retrieve locations")
         
-        Task {
-            let result = await sut.getLocations()
-            
-            switch result {
+        sut.getLocations() { response in
+            switch response {
             case .success(let locations):
                 XCTAssertEqual(locations.count, 0)
                 expectation.fulfill()
@@ -35,10 +33,8 @@ class HomeRepositoryTest: XCTestCase {
         let sut = makeSUT(scenario: .data)
         let expectation = expectation(description: "Retrieve locations")
         
-        Task {
-            let result = await sut.getLocations()
-            
-            switch result {
+        sut.getLocations() { response in
+            switch response {
             case .success(let locations):
                 XCTAssertEqual(locations.count, 2)
                 expectation.fulfill()
@@ -54,10 +50,8 @@ class HomeRepositoryTest: XCTestCase {
         
         let expectation = expectation(description: "Retrieve locations")
         
-        Task {
-            let result = await sut.getLocations()
-            
-            switch result {
+        sut.getLocations() { response in
+            switch response {
             case .success(let locations):
                 XCTFail("\(locations) shoudn be nil")
             case .failure(let failure):
@@ -81,29 +75,31 @@ class HomeRepositoryTest: XCTestCase {
     }
     
     class FakeApiClient: APIClientProtocol {
-        
+      
         var scenario: Scenarios
         
         init(scenario: Scenarios) {
             self.scenario = scenario
         }
         
-    func sendRequest<T: Decodable>(endpoint: EndpointModel, responseModel: T.Type) async -> Result<T, RequestErrors> {
+    func sendRequest<T>(endpoint: Meep.EndpointModel, responseModel: T.Type, closure: @escaping (Result<T, Meep.RequestErrors>) -> Void) where T : Decodable {
             switch scenario {
             case .data:
                 guard let model = LocationDTO.contained as? T else {
                     XCTFail("Model is not APIResponse type")
-                    return .failure(.unknown)
+                    closure(.failure(.unknown))
+                    return
                 }
-                return .success(model)
+                closure(.success(model))
             case .empty:
                 guard let model = LocationDTO.empty as? T else {
                     XCTFail("Model is not APIResponse type")
-                    return .failure(.unknown)
+                    closure(.failure(.unknown))
+                    return
                 }
-                return .success(model)
+                closure(.success(model))
             case .error:
-                return .failure(.decode)
+                closure(.failure(.unknown))
             }
         }
     }

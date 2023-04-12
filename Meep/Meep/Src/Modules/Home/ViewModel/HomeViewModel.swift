@@ -27,13 +27,19 @@ final class HomeViewModel {
     private func fetchData() {
         
         output?.receive(state: .loading)
-        homeRepository.getLocations() {[weak self] response in
+        homeRepository.getLocations() { [weak self] response in
             
             guard let self = self else { return }
             
             switch response {
             case .success(let locations):
-                guard let pictureFrame = locations.first?.pictureFrame else { return }
+                guard let pictureFrame = locations.first?.pictureFrame else {
+                    self.output?.receive(state: .error)
+                    self.router?.showAlert(alertModel: AlertModel(
+                        text: "Try again",
+                        action: self.fetchData))
+                    return
+                }
                 let markers = locations.map { $0.mapToMarkers() }
                 self.currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
             case .failure(let error):

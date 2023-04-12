@@ -9,22 +9,57 @@ import Foundation
 import XCTest
 @testable import Meep
 
-@MainActor class HomeViewModelTest: XCTestCase {
+class HomeViewModelTest: XCTestCase {
     
     var fakeOutput = HomeViewModelFakeOutput()
+    var fakeRouter = HomeFakeRouter()
     
     func test_start_viewDidLoad_then_isLoading() {
         
         let sut = makeSut(scenario: .empty)
         
-        // GIVEN
         XCTAssertFalse(fakeOutput.isLoadingState)
         sut.update(event: .viewLoaded)
         
-        // THEN
         XCTAssertTrue(fakeOutput.isLoadingState)
     }
-
+    
+    func test_start_withEmpty_then_isErrorAndHasNoData() {
+        
+        let sut = makeSut(scenario: .empty)
+        
+        XCTAssertFalse(fakeOutput.isLoadingState)
+        sut.update(event: .viewLoaded)
+         
+        XCTAssertTrue(fakeOutput.isError)
+        XCTAssertNil(fakeOutput.mapModel)
+        XCTAssertTrue(fakeRouter.isErrorShown)
+    }
+    
+    func test_start_withData_then_isLoadedAndHasData() {
+        
+        let sut = makeSut(scenario: .data)
+        
+        XCTAssertFalse(fakeOutput.isLoadingState)
+        sut.update(event: .viewLoaded)
+         
+        XCTAssertTrue(fakeOutput.isLoaded)
+        XCTAssertNotNil(fakeOutput.mapModel)
+        XCTAssertFalse(fakeRouter.isErrorShown)
+    }
+    
+    func test_start_withError_then_isErrorAndHasNoData() {
+        
+        let sut = makeSut(scenario: .error)
+        
+        XCTAssertFalse(fakeOutput.isLoadingState)
+        sut.update(event: .viewLoaded)
+         
+        XCTAssertTrue(fakeOutput.isError)
+        XCTAssertNil(fakeOutput.mapModel)
+        XCTAssertTrue(fakeRouter.isErrorShown)
+    }
+    
     //MARK: HELPERS
     
     enum Scenarios {
@@ -33,17 +68,27 @@ import XCTest
         case error
     }
     
-    @MainActor func makeSut(scenario: Scenarios) -> HomeViewModel {
+    func makeSut(scenario: Scenarios) -> HomeViewModel {
         let sut = HomeViewModel(homeRepository: HomeFakeRepository(scenario: scenario))
         sut.output = fakeOutput
+        sut.router = fakeRouter
         return sut
+    }
+    
+    class HomeFakeRouter: HomeRouter {
+        
+        var isErrorShown = false
+        
+        func showAlert(alertModel: Meep.AlertModel) {
+            isErrorShown = true
+        }
     }
     
     class HomeViewModelFakeOutput: HomeOutput {
         var isLoadingState = false
         var isLoaded = false
         var isError = false
-        var locations: [LocationModel]?
+        var mapModel: MapModel?
         
         func receive(state: Meep.HomeStates) {
             switch state {
@@ -51,7 +96,7 @@ import XCTest
                 isLoadingState = true
             case .loaded(let locations):
                 isLoaded = true
-                self.locations = locations
+                self.mapModel = locations
             case .error:
                 isError = true
             }
@@ -66,15 +111,15 @@ import XCTest
             self.scenario = scenario
         }
         
-        func getLocations() async -> Result<[Meep.LocationModel], Error> {
+        func getLocations(completion: @escaping (Result<[Meep.LocationModel], Error>) -> Void) {
             
             switch scenario {
             case .data:
-                return .success(LocationModel.contained)
+                completion(.success(LocationModel.contained))
             case .empty:
-                return .success(LocationModel.empty)
+                completion(.success(LocationModel.empty))
             case .error:
-                return .failure(RequestErrors.decode)
+                completion(.failure(RequestErrors.decode))
             }
         }
     }
