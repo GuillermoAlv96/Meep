@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol HomeRouter: AnyObject {}
+protocol HomeRouter: AnyObject {
+    func showAlert(alertModel: AlertModel)
+}

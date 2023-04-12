@@ -25,6 +25,8 @@ import Foundation
     }
     
     private func fetchData() {
+        
+        output?.receive(state: .loading)
         Task {
             let result = await homeRepository.getLocations()
             
@@ -33,8 +35,9 @@ import Foundation
                 guard let pictureFrame = locations.first?.pictureFrame else { return }
                 let markers = locations.map { $0.mapToMarkers() }
                 currentState = .loaded(MapModel(cameraPosition: pictureFrame, markers: markers))
-            case .failure(_):
-                currentState = .error
+            case .failure(let error):
+                output?.receive(state: .error)
+                router?.showAlert(alertModel: AlertModel(text: error.localizedDescription, action: fetchData))
             }
         }
     }
@@ -44,7 +47,6 @@ extension HomeViewModel: HomeInput {
     func update(event: HomeEvents) {
         switch event {
         case .viewLoaded:
-            output?.receive(state: .loading)
             fetchData()
         }
     }
