@@ -82,6 +82,9 @@ class HomeViewModelTest: XCTestCase {
         func showAlert(alertModel: Meep.AlertModel) {
             isErrorShown = true
         }
+        
+        func showDetail(location: Meep.LocationModel) {}
+        
     }
     
     class HomeViewModelFakeOutput: HomeOutput {
